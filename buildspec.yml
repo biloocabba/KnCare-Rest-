@@ -1,18 +1,14 @@
 version: 0.2
 
 phases:
-  
-    commands:
-      - echo Nothing to do in the pre_build phase...
-      - mvn clean package
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - mvn test
   post_build:
     commands:
       - echo Build completed on `date`
+      - mvn package
 artifacts:
   files:
     - target/KnCare-0.0.1-SNAPSHOT.jar
-  discard-paths: yes 
