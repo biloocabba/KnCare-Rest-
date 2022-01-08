@@ -3,7 +3,8 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ec2-user/
+    destination: /home/ec2-user/KnCare-Rest
+file_exists_behavior: OVERWRITE
 
 permissions:
   - object: /
@@ -12,12 +13,17 @@ permissions:
     group: ec2-user
 
 hooks:
-  ApplicationStop:
-    - location: scripts/server_stop.sh
-      timeout: 20
-      runas: ec2-user
+  #BeforeInstall:
+    #- location: scripts/server_clear.sh
+      #timeout: 300
+      #runas: ec2-use
   ApplicationStart:
-    - location: scripts/server_start.sh
+    - location: scripsts/server_start.sh
       timeout: 20
       runas: ec2-user
 
+  ApplicationStop:
+    - location: scripsts/server_stop.sh
+      timeout: 20
+      runas: ec2-user
+ 
