@@ -18,12 +18,12 @@ hooks:
       timeout: 300
       runas: ec2-use
   ApplicationStart:
-    - location: scripsts/server_start.sh
+    - location: scripts/server_start.sh
       timeout: 20
       runas: ec2-user
 
   ApplicationStop:
-    - location: scripsts/server_stop.sh
+    - location: scripts/server_stop.sh
       timeout: 20
       runas: ec2-user
  
