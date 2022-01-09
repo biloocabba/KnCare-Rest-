@@ -16,7 +16,7 @@ hooks:
   BeforeInstall:
     - location: server_clear.sh
       timeout: 300
-      runas: ec2-use
+      runas: ec2-user
   ApplicationStart:
     - location: server_start.sh
       timeout: 20
