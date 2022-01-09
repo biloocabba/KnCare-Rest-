@@ -14,16 +14,16 @@ permissions:
 
 hooks:
   BeforeInstall:
-    - location: scripts/server_clear.sh
+    - location: /home/ec2-user/KnCare-Rest/scripts/server_clear.sh
       timeout: 300
       runas: ec2-use
   ApplicationStart:
-    - location: scripts/server_start.sh
+    - location: /home/ec2-user/KnCare-Rest/scripts/server_start.sh
       timeout: 20
       runas: ec2-user
 
   ApplicationStop:
-    - location: scripts/server_stop.sh
+    - location: /home/ec2-user/KnCare-Rest/scripts/server_stop.sh
       timeout: 20
       runas: ec2-user
  
