@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools {
+        mvn "maven-8.8.4"
+    }
     stages {
         stage("build") {
             steps{
@@ -15,4 +18,4 @@ pipeline{
 
      }
 
-)
+}
