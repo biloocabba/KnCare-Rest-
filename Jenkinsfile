@@ -33,6 +33,9 @@ pipeline{
                     echo "Deploy the image-app"
                 }
             }
+
+        }
+    }        
           
     
 }
