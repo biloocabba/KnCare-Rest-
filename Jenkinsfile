@@ -10,7 +10,7 @@ pipeline{
         }
         stage("Deploy") {
             steps{
-                echo "I am running deployment"
+                sh "java -jar /target/*.jar"
             }
             
         }
