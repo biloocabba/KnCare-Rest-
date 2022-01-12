@@ -1,9 +1,9 @@
-def builJar() {
+def buildJar() {
     echo "building the application..."
     sh 'mvn package'
 }
 
-def builImage() {
+def buildImage() {
     echo "building the application..."
     withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER' )]) {
         sh 'docker build -t biloocabba/kncare-app:2.0 . '
