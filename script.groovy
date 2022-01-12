@@ -2,6 +2,7 @@ def buildJar() {
     echo "building the application..."
     sh 'mvn package'
 }
+return this
 
 def buildImage() {
     echo "building the application..."
@@ -11,8 +12,10 @@ def buildImage() {
         sh 'docker push biloocabba/kncare-app:2.0 '
     }
 }
+return this
 
 def deployApp() {
     echo "building the application..."
     sh 'mvn package'
 }
+return this
