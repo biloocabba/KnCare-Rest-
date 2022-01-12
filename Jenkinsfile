@@ -33,7 +33,7 @@ pipeline{
         stage("Deploy ") {
             steps{
                 script {
-                    def dockerCmd = 'sudo docker run -p 8080:8080 -d biloocabba/kncare-app:1.0'
+                    def dockerCmd = 'sudo docker run -p 8080:8080 -d biloocabba/kncare-app:3.0'
                     sshagent(['ec2-server-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@18.184.112.174 ${dockerCmd}"
                     
