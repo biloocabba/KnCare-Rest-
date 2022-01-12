@@ -5,15 +5,16 @@ pipeline{
         stage("build") {
             steps{
                 sh "mvn clean package"
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
-
             }
-
+            
         }
-
-     }
-
+        stage("Deploy") {
+            steps{
+                echo "I am running deployment"
+            }
+            
+        }
+        
+    }
+    
 }
