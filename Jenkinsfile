@@ -13,7 +13,7 @@ pipeline{
                 }
             }
         }
-        /*stage("build") {
+        stage("build") {
             steps {
                 script {
                     gv.buildJar()
@@ -24,12 +24,12 @@ pipeline{
         stage("build image") {
             steps {
                 script {
-                    gv.builImage()
+                    gv.buildImage()
                     
                 }
             }
             
-        }*/
+        }
         stage("Deploy ") {
             steps{
                 script {
