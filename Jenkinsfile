@@ -38,7 +38,7 @@ pipeline{
                     //def dockerStop = 'docker stop $(docker ps -a -q)'
                     sshagent(['ec2-server-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@18.184.112.174"
-                        sh 'docker stop $(docker ps -a -q)'
+                        sh 'docker stop $(docker ps -q)'
                         //sh "${dockerCmd}"
                         
                     
