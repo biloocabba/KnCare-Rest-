@@ -35,7 +35,7 @@ pipeline{
                 script {
                     
                     def dockerCmd = 'sudo docker run -p 8080:8080 -d  biloocabba/kncare-app:1.0'
-                    //def dockerStop = 'sudo docker stop $(sudo docker ps -a -q)'
+                    //def dockerStop = 'docker stop $(docker ps -a -q)'
                     sshagent(['ec2-server-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@18.184.112.174"
                         sh 'docker stop $(docker ps -a -q)'
