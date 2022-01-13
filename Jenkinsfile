@@ -39,7 +39,7 @@ pipeline{
                     sshagent(['ec2-server-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@3.124.185.84"
                         sh 'chmod -R 777 ./stopByPort.sh'
-                        sh './stopByPort.sh 8080'
+                        //sh './stopByPort.sh 8080'
                         //sh 'docker kill $(docker ps -q)'
                         sh "${dockerCmd}"
                         
