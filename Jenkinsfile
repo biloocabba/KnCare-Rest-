@@ -37,8 +37,8 @@ pipeline{
                     def dockerCmd = 'sudo docker run -p 8080:8080 -d --init biloocabba/kncare-app:1.0'
                     sshagent(['ec2-server-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@18.184.112.174"
-                        sh 'docker ps -f name=biloocabba/kncare-app:1.0 -q | xargs --no-run-if-empty docker container stop'
-                        sh 'docker container ls -a -fname=biloocabba/kncare-app:1.0 -q | xargs -r docker container rm'
+                        sh 'sudo docker ps -f name=biloocabba/kncare-app:1.0 -q | xargs --no-run-if-empty docker container stop'
+                        sh 'sudo docker container ls -a -fname=biloocabba/kncare-app:1.0 -q | xargs -r docker container rm'
                         sh "${dockerCmd}"
                     
                     }
