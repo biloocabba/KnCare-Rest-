@@ -44,7 +44,7 @@ pipeline{
                         sh "${dockerCmd}"
                         
                     
-                    }
+                    } 
                 }
             }
 
