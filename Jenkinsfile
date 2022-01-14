@@ -34,7 +34,7 @@ pipeline{
             steps{
                 script {
                     
-                    def dockerCmd = 'docker run -p 8080:8000 -d  biloocabba/kncare-app:4.0'
+                    def dockerCmd = 'docker run -p 8000:8000 -d  biloocabba/kncare-app:4.0'
                     //def dockerStop = 'docker stop $(docker ps -a -q)'
                     sshagent(['ec2-server-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@3.124.185.84"
