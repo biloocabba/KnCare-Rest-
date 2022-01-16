@@ -38,7 +38,7 @@ pipeline{
                     def shellCmd = "bash ./server-cmds.sh"
                     //def dockerStop = 'docker stop $(docker ps -a -q)'
                     sshagent(['ec2-server-key']) {
-                        sh "scp server-key.sh ec2-user@18.192.123.116:/home/ec2-user"
+                        sh "scp server-cmds.sh ec2-user@18.192.123.116:/home/ec2-user"
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@18.192.123.116 ${shellCmd}"
                         //sh 'chmod -R 777 ./stopByPort.sh'
                         //sh './stopByPort.sh 8080'
